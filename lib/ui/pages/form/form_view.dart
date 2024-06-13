@@ -16,41 +16,29 @@ class FormView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return WillPopScope(
-    //   onWillPop: () async {
-    //     Get.back(result: 'onBack');
-    //     return true;
-    //   },
-    return PopScope(
-      canPop: true,
-      onPopInvoked: (didPop) async {
-        // Get.back(result: 'onBack');
-        // Navigator.pop(context, 'onBack');
-        // Navigator.of(context).pop('onBack');
-      },
-      child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Form'),
-          ),
-          bottomNavigationBar: _buildBottom(),
-          body: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                _buildFormItem(
-                    label: 'Title',
-                    txtHint: 'title',
-                    controller: ctrl.txtTitleController),
-                const SizedBox(
-                  height: 16,
-                ),
-                _buildFormItem(
-                    label: 'Desc',
-                    txtHint: 'desc',
-                    controller: ctrl.txtDescController),
-              ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Form'),
+      ),
+      bottomNavigationBar: _buildBottom(),
+      body: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            _buildFormItem(
+                label: 'Title',
+                txtHint: 'title',
+                controller: ctrl.txtTitleController),
+            const SizedBox(
+              height: 16,
             ),
-          )),
+            _buildFormItem(
+                label: 'Desc',
+                txtHint: 'desc',
+                controller: ctrl.txtDescController),
+          ],
+        ),
+      ),
     );
   }
 
@@ -61,17 +49,13 @@ class FormView extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.only(left: 16, right: 16),
         child: TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           controller: controller,
           obscureText: false,
           decoration: InputDecoration(
             hintText: txtHint,
             labelText: label,
           ),
-          onChanged: (value) {
-            // if (onChanged != null) {
-            //   onChanged!(value);
-            // }
-          },
           validator: (String? value) {
             if (value == null || value.isEmpty) {
               return 'Please enter some text';
@@ -113,7 +97,9 @@ class FormView extends StatelessWidget {
                         result: CardData(
                             title: ctrl.txtTitleController.text,
                             desc: ctrl.txtDescController.text,
-                            id: Uuid().v4()))
+                            id: ctrl.argMode != 'edit'
+                                ? Uuid().v4()
+                                : ctrl.argData?.id ?? ''))
                   }
               }),
     );
