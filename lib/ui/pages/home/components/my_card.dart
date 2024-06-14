@@ -7,6 +7,7 @@ class MyCard extends StatelessWidget {
   final String id;
   final String title;
   final String desc;
+  final String imgUrl;
   final Function(String id) onEdit;
   final Function(String id) onDelete;
 
@@ -17,6 +18,7 @@ class MyCard extends StatelessWidget {
     required this.desc,
     required this.onEdit,
     required this.onDelete,
+    required this.imgUrl,
   });
 
   @override
@@ -28,9 +30,8 @@ class MyCard extends StatelessWidget {
           log('Card tap!!');
         },
         child: ListTile(
-          leading: const Icon(
-            Icons.account_circle,
-            size: 30,
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(imgUrl),
           ),
           title: Text(
             title,

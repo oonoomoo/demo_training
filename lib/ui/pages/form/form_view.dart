@@ -36,6 +36,13 @@ class FormView extends StatelessWidget {
                 label: 'Desc',
                 txtHint: 'desc',
                 controller: ctrl.txtDescController),
+            const SizedBox(
+              height: 16,
+            ),
+            _buildFormItem(
+                label: 'ImgUrl',
+                txtHint: 'imageUrl',
+                controller: ctrl.txtImgUrlController),
           ],
         ),
       ),
@@ -97,6 +104,7 @@ class FormView extends StatelessWidget {
                         result: CardData(
                             title: ctrl.txtTitleController.text,
                             desc: ctrl.txtDescController.text,
+                            imgUrl: ctrl.txtImgUrlController.text,
                             id: ctrl.argMode != 'edit'
                                 ? Uuid().v4()
                                 : ctrl.argData?.id ?? ''))

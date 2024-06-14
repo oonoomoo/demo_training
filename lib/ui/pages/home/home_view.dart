@@ -46,6 +46,7 @@ class HomeView extends StatelessWidget {
                         id: element.id,
                         title: element.title,
                         desc: element.desc,
+                        imgUrl: element.imgUrl,
                         onDelete: (String id) {
                           ctrl.deleteCard(id);
                         },
@@ -97,6 +98,7 @@ class HomeView extends StatelessWidget {
                                 id: element.id,
                                 title: element.title,
                                 desc: element.desc,
+                                imgUrl: element.imgUrl,
                                 onDelete: (String id) {
                                   ctrl.deleteCard(id);
                                 },
