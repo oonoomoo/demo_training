@@ -1,18 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:work_shop/models/card_data.dart';
 
 class FormController extends GetxController {
   late TextEditingController txtTitleController;
   late TextEditingController txtDescController;
 
-  final argMode = Get.arguments['mode'];
-  final argData = Get.arguments['data'];
+  final String argMode = Get.arguments['mode'];
+  final CardData? argData = Get.arguments['data'];
 
   @override
   void onInit() {
     txtTitleController =
-        TextEditingController(text: argMode == 'edit' ? argData.title : '');
+        TextEditingController(text: argMode == 'edit' ? argData?.title : '');
     txtDescController =
-        TextEditingController(text: argMode == 'edit' ? argData.desc : '');
+        TextEditingController(text: argMode == 'edit' ? argData?.desc : '');
   }
 }

@@ -33,8 +33,11 @@ class HomeController extends GetxController {
     log('edit card');
     var result = await Get.toNamed(AppRoutes.form,
         arguments: {'mode': 'edit', 'data': values});
+
     if (result != null) {
-      data.add(CardData(id: result.id, title: result.title, desc: result.desc));
+      int cardIndex = data.indexWhere((element) => element.id == values.id);
+      data[cardIndex] =
+          CardData(id: result.id, desc: result.desc, title: result.title);
     }
   }
 
