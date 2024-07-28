@@ -105,9 +105,9 @@ class FormView extends StatelessWidget {
                             title: ctrl.txtTitleController.text,
                             desc: ctrl.txtDescController.text,
                             imgUrl: ctrl.txtImgUrlController.text,
-                            id: ctrl.argMode != 'edit'
-                                ? Uuid().v4()
-                                : ctrl.argData?.id ?? ''))
+                            id: ctrl.argMode == 'edit'
+                                ? ctrl.argData?.id ?? ''
+                                : Uuid().v4()))
                   }
               }),
     );

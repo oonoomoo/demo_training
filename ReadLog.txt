@@ -1,0 +1,109 @@
+Agenda 
+9.00 - 9.30 Noom 
+	Flutter (Framwork, SDK)  
+	-คืออะไร
+	-Framwork
+	-SDK
+Material
+Widget Tree 
+
+ข้อดีของ flutter 
+Q&A
+
+//// 9.30 - 10.00 ///
+dart คืออะไร 3นาที  P
+
+syntax dart :
+	- การสร้างตัวแปร และ คำต้องห้าม	
+	- การแปลง type (toString(),int.parse,double.parse)
+	-function และการ ประกาศรับตัวแปร มีการ return หรือไม่มี 
+	-ternary expressions  ?? ?:
+Q&A
+
+//// 10.00 - 10.30 ///
+getX คืออะไร ใช้ทำอะไร    P
+	-state management (.obs ,Obx)
+	-dependency injection ( เรียก controller)
+	-router management
+Q&A
+
+//// 10.30 - 12.00 ///
+สร้างโปรเจค Noom
+ -setup project (name,package name)  
+
+ -Folder (lib)
+ -pubspec
+-setting format on save
+-device manager add device 
+ -flutter doctor //เช็คว่าครบรึยัง
+- extention(plugin) (jsonToDart),Flutter, Dart
+- ลองรัน 
+- สร้าง route , pages 
+- สร้าง view controller (home) 
+- แก้ main Getmaterial
+-Get to
+-Get toNamed argument 
+-Get Offname;
+ 
+//// 12.00 -13.00 ///
+เบรค
+
+//// 13.00 - 13.30 ///  PPP
+-View(build scafold Widget )
+	
+	-scafold(Appbar,Body)
+	-Container 
+		-decorate
+		-padding EdgeInstall
+		-margin 
+	-SizedBox 
+		-width height
+	-Text
+		Textstyle
+	-Row
+		-mainAxis , Cross ,children
+	-Coloum
+		-mainAxis , Cross ,children
+	-ListView
+	-ListTiles
+	-InkWell
+	-Input FormInput
+	-material Button
+
+controller 
+	-init
+	-function 
+		-void (future) ประกาศ string ที่ controller แล้วมาแสดงหน้า view 
+//// 13.30 - 14.30 ///
+
+component 
+	-ทำ primary button (สวนกลาง)
+
+
+workshop ให้ทำหน้าตาตามแบบ (แต่สร้างโฟล์เดอร์ใหม่) ให้ทำหน้า add edit(form) จากนั้น ใน controller มี textcontroller ด้วย
+
+//// 14.30 - 15.00 /// P
+
+component 
+	-ทำ primary button (สวนกลาง)
+
+//// 15.00 - 16.30 ///  Noom
+สร้าง card เพื่อเรียกใช้ในหน้าview folderเดียวกับ  view  
+(workshop)ทำตัวอย่าง และให้ทำ หน้าตาตามแบบ จากนั้น (มี ปุ่มdelete)
+สอนต่อ components 
+objest[]
+
+	ทำหน้า add/edit(พร้อมสร้างList สำหรับ card)  ถ้าจะเทสหน้าให้ 
+เพิ่มหน้าที่ทำจาก workshop ในไฟล์ route 
+ จากนั้นใช้ Get
+	Get.tonamed offname offallname 
+ทำตัวอย่างหน้า coupon list มี add delete edit 
+
+//// 16.30 - 17.30 /// Noom
+
+ต่อ api ดึงข้อมูลมาแสดง ที่ coupon list
+
+//// 17.30 - 17.40 /// P
+***build apk*** 
+ชี้จุดไฟล์ apk 
+
