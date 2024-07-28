@@ -28,6 +28,7 @@ class MyCard extends StatelessWidget {
       child: InkWell(
         onTap: () {
           log('Card tap!!');
+          onEdit(id);
         },
         child: ListTile(
           leading: CircleAvatar(
@@ -44,16 +45,16 @@ class MyCard extends StatelessWidget {
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              InkWell(
-                onTap: () {
-                  onEdit(id);
-                },
-                child: const Icon(
-                  Icons.edit,
-                  size: 24,
-                  color: Colors.blue,
-                ),
-              ),
+              // InkWell(
+              //   onTap: () {
+              //     onEdit(id);
+              //   },
+              //   child: const Icon(
+              //     Icons.edit,
+              //     size: 24,
+              //     color: Colors.blue,
+              //   ),
+              // ),
               const SizedBox(width: 8),
               InkWell(
                 onTap: () {

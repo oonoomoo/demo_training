@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 // import 'package:get/get.dart';
 import 'package:get/get.dart' hide Response;
 import 'package:uuid/uuid.dart';
+import 'package:work_shop/models/amibo.dart';
 import 'package:work_shop/models/card_data.dart';
 import 'package:work_shop/models/product.dart';
 import 'package:work_shop/ui/routes/routes.dart';
@@ -32,20 +33,36 @@ class HomeController extends GetxController {
     // final response =
     //     await dio.get("https://jsonplaceholder.typicode.com/todos/1");
     // final response = await getAsync("https://fakestoreapi.com/products");
+    // final response = await dio.get("https://fakestoreapi.com/products");
 
-    final response = await dio.get("https://fakestoreapi.com/products");
+    final response =
+        await dio.get("https://www.amiiboapi.com/api/amiibo/?name=mario");
+    final jsonResponse = jsonDecode(response.toString());
+    var produce = Amibo.fromJson(jsonResponse);
+
+    if (produce?.amiibo != null) {
+      data.assignAll(produce.amiibo!
+          .map((e) => CardData(
+              title: e.name ?? '',
+              imgUrl: e.image ?? '',
+              id: e.head != null ? e.head.toString() : '',
+              desc: e.amiiboSeries ?? ''))
+          .toList());
+    }
+
+    // print(response);
     // if there is a key before array, use this : return (response.data['data'] as List).map((child)=> Children.fromJson(child)).toList();
-    var produce = (response.data as List)
-        .map((element) => Product.fromJson(element))
-        .toList();
+    // var produce = (response.data as List)
+    //     .map((element) => Product.fromJson(element))
+    //     .toList();
 
-    data.assignAll(produce
-        .map((e) => CardData(
-            title: e.title ?? '',
-            imgUrl: e.image ?? '',
-            id: e.id != null ? e.id.toString() : '',
-            desc: e.description ?? ''))
-        .toList());
+    // data.assignAll(produce
+    //     .map((e) => CardData(
+    //         title: e.title ?? '',
+    //         imgUrl: e.image ?? '',
+    //         id: e.id != null ? e.id.toString() : '',
+    //         desc: e.description ?? ''))
+    //     .toList());
   }
 
   Future<Response> getAsync(String path) {
