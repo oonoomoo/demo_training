@@ -38,12 +38,11 @@ Q&A
  -flutter doctor //เช็คว่าครบรึยัง
 - extention(plugin) (jsonToDart),Flutter, Dart
 - ลองรัน 
-- สร้าง route , pages 
+- อธิบาย stateless stateful
 - สร้าง view controller (home) 
+- สร้าง route , pages 
 - แก้ main Getmaterial
--Get to
--Get toNamed argument 
--Get Offname;
+
  
 //// 12.00 -13.00 ///
 เบรค
@@ -51,7 +50,7 @@ Q&A
 //// 13.00 - 13.30 ///  PPP
 -View(build scafold Widget )
 	
-	-scafold(Appbar,Body)
+	-scafold(Appbar,Body,bottomNavigator)
 	-Container 
 		-decorate
 		-padding EdgeInstall
@@ -68,12 +67,16 @@ Q&A
 	-ListTiles
 	-InkWell
 	-Input FormInput
-	-material Button
+	-ElevatedButton
 
 controller 
 	-init
 	-function 
 		-void (future) ประกาศ string ที่ controller แล้วมาแสดงหน้า view 
+-Get to
+-Get toNamed argument 
+-Get Offname;
+
 //// 13.30 - 14.30 ///
 
 component 
@@ -82,10 +85,6 @@ component
 
 workshop ให้ทำหน้าตาตามแบบ (แต่สร้างโฟล์เดอร์ใหม่) ให้ทำหน้า add edit(form) จากนั้น ใน controller มี textcontroller ด้วย
 
-//// 14.30 - 15.00 /// P
-
-component 
-	-ทำ primary button (สวนกลาง)
 
 //// 15.00 - 16.30 ///  Noom
 สร้าง card เพื่อเรียกใช้ในหน้าview folderเดียวกับ  view  
